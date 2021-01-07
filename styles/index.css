@@ -13,7 +13,21 @@ header {
     height: 85px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin: 0 auto;
+}
+
+header a {
+    color: #322153;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+header a i {
+    margin-left: 10px;
+    font-size: 22px;
 }
 
 .container {
@@ -67,5 +81,5 @@ header {
 .container .page-main a i {
     color: white;
     font-size: 25px;
-    margin-left: 15px;
+    margin-right: 10px;
 }
