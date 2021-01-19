@@ -33,15 +33,16 @@
             </div>
 
             <div class="field-group">
-                <div class="field">
+                <div class="field-state">
                     <label for="state">Estado</label>
                     <select name="state" id="state">
                         <option value="">Selecione o Estado</option>
                     </select>
+                    <input type="hidden" name="uf">
                 </div>
-                <div class="field">
+                <div class="field-city">
                     <label for="city">Cidade</label>
-                    <select name="city" id="city">
+                    <select name="city" id="city" disabled>
                         <option value="">Selecione a Cidade</option>
                     </select>
                 </div>
@@ -82,6 +83,8 @@
             <button type="submit">Cadastrar ponto de coleta</button>
         </form>
     </div>
+
+    <script src="./create-point.js"></script>
 </body>
 
 </html>
