@@ -37,69 +37,68 @@ header a img {
     min-width: 360px;
     height: auto;
     margin: 50px auto 0;
+    display: flex;
+    justify-content: center;
 }
 
 .create-form form {
-    background-color: rgba(168, 177, 168, 0.1);
-    width: 100%;
-    max-width: 700px;
-    height: auto;
+    width: 50%;
     display: flex;
     flex-direction: column;
-    padding: 50px 30px;
-    margin: 30px auto;
-    border-radius: 15px;
 }
 
-.create-form form h1 {
-    text-align: center;
-    font-size: 36px;
-}
-
+.create-form form h1,
 .create-form form h2 {
-    margin: 40px 0;
-    font-size: 22px;
+    margin: 20px 0;
 }
 
-input, select {
-    background-color: rgba(169, 169, 169, 0.315);
+.create-form form .field {
+    width: 100%;
+    margin: 5px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.create-form form .field label {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.create-form form .field input {
+    background-color: rgba(224, 215, 215, 0.3);
     width: 100%;
     height: 40px;
     border: 0;
     outline: none;
-    padding: 0 5px;
     border-radius: 5px;
-    margin-top: 5px;
+    padding: 0 10px;
 }
 
-label {
-    margin-top: 5px;
+.create-form form .field input[name="address"] {
+    width: 95%;
 }
 
 .create-form form .field-group {
     width: 100%;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    margin-top: 5px;
 }
 
-.create-form form .field-group .field,
 .create-form form .field-group .field-state,
 .create-form form .field-group .field-city {
+    width: 50%;
+}
+
+.create-form form .field-group .field-state select,
+.create-form form .field-group .field-city select {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 0 10px;
 }
 
-.create-form form .field-group .field + .field {
-    margin-left: 5px;
-    width: 20%;
-}
-
-.create-form form .field-group .field-city {
-    margin-left: 5px;
+.create-form form .field-group .field-state select[name="state"] {
+    width: 95%;
 }
 
 .items {
@@ -132,16 +131,17 @@ label {
     grid-template-columns: repeat(3, 1fr);
     align-content: center;
     justify-items: center;
-    margin: 40px auto 0;
+    margin: 40px auto;
 }
 
-.items .cards .card {
+.items .cards li {
+    list-style: none;
     width: 90%;
-    height: auto;
+    height: 130px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     margin: 5px;
     border-radius: 8px;
     border: 2px solid gray;
@@ -149,12 +149,22 @@ label {
     padding: 10px 0;
 }
 
-.items .cards .card img {
+.items .cards .li img {
     margin-bottom: 20px;
 }
 
-.items .cards .card p {
+.items .cards .li p {
     text-align: center;
+}
+
+.items .cards li.selected {
+    background: #e1faec;
+    border: 2px solid #34cb79;
+}
+
+.items .cards li img,
+.items .cards li span {
+    pointer-events: none;
 }
 
 button {
