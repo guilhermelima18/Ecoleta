@@ -4,37 +4,38 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles/create-point.css">
-        <link rel="stylesheet" href="styles/modal.css">
+        <link rel="stylesheet" href="/styles/all.css">
+        <link rel="stylesheet" href="/styles/create-point.css">
+        <link rel="stylesheet" href="/styles/modal.css">
         <title>Ecoleta | Criar Ponto de Coleta</title>
     </head>
 
     <body>
-        <header>
-            <img src="/assets/logo.svg" alt="Logo Ecoleta">
-            <a href="/"><img src="/assets/arrow-left.svg" alt="Voltar para Home">Home</a>
-        </header>
+        {% block header2 %}
+            {% include "Header/header2.html" %}
+        {% endblock header2 %}
+
         <div class="create-form">
             <form action="/savepoint" method="POST">
                 <h1>Cadastro do Ponto de Coleta</h1>
                 <h2>Dados da entidade</h2>
                 <div class="field">
-                    <label for="name">Nome da entidade:</label>
+                    <label for="name">Nome da entidade</label>
                     <input type="text" name="name" required="required">
                 </div>
 
                 <div class="field">
-                    <label for="Image-URL">Imagem URL:</label>
+                    <label for="Image-URL">Imagem da Empresa</label>
                     <input type="url" name="image" placeholder="https://" required="required">
                 </div>
 
                 <div class="field-group">
                     <div class="field">
-                        <label for="address">Endereço:</label>
+                        <label for="address">Endereço</label>
                         <input type="text" name="address" required="required">
                     </div>
                     <div class="field">
-                        <label for="address2">Número:</label>
+                        <label for="address2">Número</label>
                         <input type="text" name="address2" required="required">
                     </div>
                 </div>

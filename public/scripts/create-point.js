@@ -1,6 +1,3 @@
-document.querySelector("select[name=state]")
-.addEventListener("change", selectCity);
-
 function populateUFs() {
     const ufSelect = document.querySelector("select[name=state]");
 
@@ -11,7 +8,7 @@ function populateUFs() {
         .then((states) => {
 
             for (state of states) {
-                ufSelect.innerHTML += `<option value="${state.id}">${state.nome}</option>`
+                ufSelect.innerHTML += `<option value="${state.sigla}">${state.nome}</option>`
             }
 
         });
@@ -37,12 +34,15 @@ function selectCity(event) {
         citySelect.innerHTML = "";
 
         for (city of cities) {
-            citySelect.innerHTML += `<option value="${city.id}">${city.nome}</option>`
+            citySelect.innerHTML += `<option value="${city.nome}">${city.nome}</option>`
         }
 
         citySelect.disabled = false;
     });
 };
+
+document.querySelector("select[name=state]")
+.addEventListener("change", selectCity);
 
 const itemsToCollect = document.querySelectorAll(".cards li");
 
@@ -78,4 +78,5 @@ function handleSelectedItem(event) {
     }
 
     collectedItems.value = selectedItems;
+    console.log(collectedItems)
 }

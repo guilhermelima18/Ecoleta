@@ -34,6 +34,11 @@
     position: absolute;
     top: 0;
     right: 10px;
+    transition: 600ms;
+}
+
+.modal-overlay .modal form a i:hover {
+    transform: scale(1.3);
 }
 
 .modal-overlay .modal form label {
@@ -82,7 +87,6 @@
     position: fixed;
     top: 0;
     left: 0;
-    display: none;
 }
 
 #modal .content {

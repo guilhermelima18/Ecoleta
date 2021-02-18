@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/styles/all.css">
+        <link rel="stylesheet" href="/styles/search-results.css">
+        <title>Ecoleta | Pontos Cadastrados</title>
+    </head>
+    <body>
+        {% block header2 %}
+            {% include "Header/header2.html" %}
+        {% endblock header2 %}
+
+        <main>
+            {% if total > 0 %}
+                <h4>
+                    <span>{{total}}
+                        ponto(s)</span>
+                    encontrado(s).
+                </h4>
+
+                <div class="cards">
+                    {% for place in places %}
+
+                        <div class="card">
+                            <img src="{{place.image}}" alt="{{place.name}}">
+                            <h1>{{place.name}}</h1>
+                            <h3>{{place.items}}</h3>
+                            <p>
+                                {{place.address}}, Nº{{place.address2}}
+                            </p>
+                            <p>
+                                {{place.city}},
+                                {{place.state}}
+                            </p>
+                        </div>
+
+                    {% endfor %}
+                </div>
+            {% else %}
+
+                <h4>
+                    <span>Nenhum item foi encontrado.</span>
+                    Nenhum ponto de coleta foi encontrado na cidade pesquisada.</h4>
+
+            {% endif %}
+        </main>
+    </body>
+</html>
